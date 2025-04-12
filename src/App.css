@@ -21,3 +21,15 @@ body {
 .container {
     max-width: 1320px !important;
 }
+
+.support {
+    cursor: pointer;
+}
+.support .text {
+    opacity: 0;
+    transition: all 0.1s ease;
+}
+.support:hover .text {
+    display: block;
+    opacity: 1;
+}
