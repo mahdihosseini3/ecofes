@@ -67,7 +67,7 @@ function Slider(props: {
     return (
         <div className={'w-full  overflow-hidden'}>
             {X} ({final.length})
-            <div className={`flex ${!props.reverse ? "items-start":"items-end flex-row-reverse"} w-full gap-5 transition-all duration-[2s]`} style={{
+            <div className={`flex ${!props.reverse ? "items-start":"items-end flex-row-reverse"} w-full gap-5 transition-all duration-[2s] ease-linear`} style={{
                 transform: `translateX(${X}px)`
             }}>
                 {final}
