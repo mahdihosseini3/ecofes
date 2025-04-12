@@ -20,7 +20,7 @@ function Sponsors({size: x = 100}: {
        <div className={'pb-22 bg-white'}>
            <div className={'flex flex-col items-center justify-center gap-3'}>
                <h3 className={'text-4xl font-bold py-4'}>حامیان جشنواره</h3>
-               <p className={'text-center'}>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+               <p className={'text-center'}>با تشکر از همه حامیان؛ هم‌سفران توسعه بومگردی ایران!</p>
            </div>
            <br/>
            <div className={'flex flex-col gap-5'}>
