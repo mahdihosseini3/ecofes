@@ -2,7 +2,8 @@ import {EmailIcon, InstagramIcon, PhoneIcon, TelegramIcon} from "./icons.tsx";
 
 const Footer = () => {
     return (
-        <div className={'container mx-auto mt-3'}>
+        <div className={'bg-white'}>
+        <div className={'container mx-auto mt-3 '}>
             <div className="flex flex-col font-medium md:flex-row justify-between items-center p-4 w-full">
                 {/* Right side - Persian text */}
                 <div className="w-full md:w-1/2 mb:mb-0 mb-10 mt-6 md:mt-0 flex flex-col items-center md:items-start">
@@ -66,6 +67,7 @@ const Footer = () => {
                 طراحی و توسعه رایا پرداز ویرا گستر
                 ۱۴۰۴ - تمام حقوق محفوظ است
             </div>
+        </div>
         </div>
     );
 };
