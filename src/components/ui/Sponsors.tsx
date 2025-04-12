@@ -48,7 +48,7 @@ function Slider(props: {
         ...props.items
     ])
     const [X2, setX2] = useState(0)
-    const [X, setX] = useState(0);
+    const [X, setX] = useState(frame);
     const thread = useRef<number | undefined>(undefined);
 
 
