@@ -30,7 +30,7 @@ export default function SwiperCoverflow() {
       <Swiper
         navigation
         pagination={{clickable: true}}
-        className={"absolute top-[-150px]"}
+        className={"absolute top-[-90px] md:top-[-150px]"}
         effect="coverflow"
         coverflowEffect={{
           rotate: 0,
