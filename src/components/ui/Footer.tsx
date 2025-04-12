@@ -78,7 +78,7 @@ const Footer = () => {
             <div style={{
                 position: "fixed"
             }} className={'md:left-10 support md:bottom-10 left-6 bottom-6 flex gap-0 items-center md:p-5 z-[1000]'}>
-                <p className={'bg-primary shadow text-white text p-2 rounded-full rounded-l-0 relative -left-5 pl-7'}>هوش مصنوعی</p>
+                <p className={'bg-primary shadow  text-white text p-2 rounded-full rounded-l-0 absolute w-[140px] left-[60%] '}>هوش مصنوعی</p>
                 <div className={'p-3 shadow bg-primary text-white rounded-full z-99'}>
                     <SupportIcon width={"45px"} height={'45px'} />
                 </div>
