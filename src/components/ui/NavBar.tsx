@@ -19,10 +19,23 @@ export default function NavBar() {
   }
 
   return (
-    <div className={"flex w-full h-full gap-6"}>
-      <Logo size={60}/>
+    <div className={"flex w-full px-6 md:px-0 h-full gap-6"}>
+
+      <div className={"w-full md:w-fit"}>
+        <Logo size={60}/>
+
+
+      </div>
+
+
       <div
-        className={"bg-white flex justify-between h-full px-8 pl-3 items-center !w-[50%] rounded-4xl py-2 w-[400px]"}>
+        className={"bg-white hidden  md:flex justify-between h-full px-8 pl-3 items-center !w-[50%] rounded-4xl py-2 w-[400px]"}>
+
+
+        <div>
+
+        </div>
+
         <div className={"flex gap-8"}>
           {Object.entries(links).map(([key, value]) => {
             let {label} = value;

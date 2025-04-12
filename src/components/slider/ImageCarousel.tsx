@@ -9,31 +9,65 @@ import {EffectCoverflow, Navigation, Pagination} from "swiper/modules";
 SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
 
 export default function SwiperCoverflow() {
+
+  const items = [
+    {title: "میدان امیرچخماق خان", img: "/images/slider/img1.png"},
+    {title: "میدان امیرچخماق خان", img: "/images/slider/img1.png"},
+    {title: "میدان امیرچخماق خان", img: "/images/slider/img1.png"},
+    {title: "میدان امیرچخماق خان", img: "/images/slider/img1.png"},
+    {title: "میدان امیرچخماق خان", img: "/images/slider/img1.png"},
+    {title: "میدان امیرچخماق خان", img: "/images/slider/img1.png"},
+    {title: "میدان امیرچخماق خان", img: "/images/slider/img1.png"},
+    {title: "میدان امیرچخماق خان", img: "/images/slider/img1.png"},
+    {title: "میدان امیرچخماق خان", img: "/images/slider/img1.png"},
+
+  ];
+
+
+
   return (
-    <div className="App">
+    <div >
       <Swiper
         navigation
         pagination={{clickable: true}}
+        className={"absolute top-[-150px]"}
         effect="coverflow"
         coverflowEffect={{
           rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
+          stretch: 15,
+          depth: 60,
+          modifier: 4,
           slideShadows: false
         }}
-        slidesPerView={2}
+
+        centeredSlidesBounds={true}
+        centerInsufficientSlides={true}
+        breakpoints={{
+          320: {
+            slidesPerView: 1
+          },
+          720: {
+            slidesPerView: 3
+          },
+          1024: {
+            slidesPerView: 5
+          }
+        }}
+        slidesPerView={6}
         centeredSlides
-        style={{height: "500px"}}
+
       >
-        <SwiperSlide
-          style={{
-            backgroundImage:
-              "url(https://swiperjs.com/demos/images/nature-1.jpg)"
-          }}
-        >
-          Slide 1
-        </SwiperSlide>
+        {items.map(item => {
+          return (
+            <SwiperSlide
+              className={"w-[80px] flex justify-center h-[140px]"}
+            >
+              <img src={item.img} alt=""/>
+            </SwiperSlide>
+          )
+        })}
+
+
 
       </Swiper>
     </div>

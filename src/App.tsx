@@ -13,7 +13,7 @@ function App() {
     <div className={"bg-[#FFEFE4] "}>
       <HeroSection/>
 
-      <div className={"container flex flex-col gap-2 justify-center items-center mx-auto"}>
+      <div className={"container h-[500px] flex flex-col gap-2 items-center  mx-auto"}>
         <div className={"text-center py-12"}>
           <h4 className={"text-4xl font-bold text-[#454545]"}>درباره جشنواره</h4>
         </div>
@@ -25,8 +25,9 @@ function App() {
           سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
           صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
       </div>
-
-      <ImageCarousel/>
+      <div className={"bg-white relative "}>
+        <ImageCarousel/>
+      </div>
       <Sponsors/>
       <FAQSection/>
       <Footer/>
