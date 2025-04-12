@@ -11,7 +11,7 @@ const HeroSection = () => {
       </div>
 
       <div className={"relative container w-full h-full flex-col gap-16 md:flex-row flex justify-between mx-auto"}>
-        <div className={'w-full flex-col gap-8 px-6 md:px-24 flex mt-24 h-full'}>
+        <div className={'w-full flex-col gap-8 px-6 md:px-24 flex mt-0 md:mt-24 h-full'}>
           <h1 className={"md:text-5xl text-3xl leading-[1.25] font-bold "}> جشنواره ملی <br/>بومگردی های ایران</h1>
           <p className={"text-[#5E5E5E] w-full md:w-10/12"}>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
             با

@@ -17,7 +17,7 @@ function App() {
         <div className={"text-center py-12"}>
           <h4 className={"text-4xl font-bold text-[#454545]"}>درباره جشنواره</h4>
         </div>
-        <p className={"w-10/12  text-center leading-[1.8] font-semibold text-[#303030]"}>لورم ایپسوم متن ساختگی با تولید
+        <p className={"w-10/12  text-justify md:text-center leading-[1.8] font-semibold text-[#303030]"}>لورم ایپسوم متن ساختگی با تولید
           سادگی نامفهوم از صنعت چاپ و با استفاده از
           طراحان
           گرافیک است. لورم ایپسوم متن
