@@ -1,12 +1,12 @@
 import './App.css'
-import HeroSection from "./components/ui/HeroSection.tsx";
+import Footer from './components/ui/Footer'
 
 function App() {
 
 
   return (
     <div className={""}>
-      <HeroSection/>
+      <Footer />
     </div>
   )
 }
