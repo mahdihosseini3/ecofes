@@ -1,6 +1,7 @@
 import {Swiper, SwiperSlide} from "swiper/react";
 
 // Import Swiper styles
+// @ts-ignore
 import "swiper/css";
 import SwiperCore from "swiper";
 import {EffectCoverflow, Navigation, Pagination} from "swiper/modules";
