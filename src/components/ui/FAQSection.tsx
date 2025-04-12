@@ -1,16 +1,34 @@
 import {useState} from 'react';
 import {ChevronIcon, MessageIcon} from "./icons.tsx";
 
-const FAQSection = () => {
-    const faqItems = [
-        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از",
-        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از",
-        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از",
-        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از",
-        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از",
-        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از"
+const FAQs = [
+        {
+            "title": "زمان و مکان برگزاری جشنواره",
+            "description": "جشنواره ملی بومگردی ایران در تاریخ [تاریخ دقیق] در استان کرمان برگزار خواهد شد. مکان دقیق برگزاری در [نام محل] می باشد."
+        },
+        {
+            "title": "اهداف برگزاری جشنواره",
+            "description": "این جشنواره با هدف معرفی جاذبه های بومگردی ایران، توسعه گردشگری پایدار و حمایت از جامعه محلی در استان کرمان سازماندهی شده است."
+        },
+        {
+            "title": "برنامه های جشنواره",
+            "description": "برنامه های جشنواره شامل تورهای طبیعت گردی، نمایش صنایع دستی محلی، کارگاه های آموزشی، نمایشگاه عکس و فیلم و برنامه های فرهنگی می باشد."
+        },
+        {
+            "title": "شرایط ثبت نام و شرکت",
+            "description": "علاقه مندان می توانند از طریق وبسایت رسمی جشنواره به آدرس [آدرس سایت] ثبت نام نمایند. برخی برنامه ها رایگان و برخی نیازمند تهیه بلیت هستند."
+        },
+        {
+            "title": "امکانات اقامتی",
+            "description": "برای شرکت کنندگان امکانات اقامتی در اقامتگاه های بومگردی استان کرمان پیش بینی شده است. لیست کامل اقامتگاه ها در سایت جشنواره موجود است."
+        },
+        {
+            "title": "نکات مهم برای سفر",
+            "description": "شرکت کنندگان باید شرایط آب و هوایی کرمان را بررسی نمایند. رعایت اصول گردشگری مسئولانه و احترام به فرهنگ محلی الزامی است."
+        }
     ];
 
+const FAQSection = () => {
     return (
         <div className={'py-16 '}>
             <div className={'container mx-auto'}>
@@ -31,8 +49,8 @@ const FAQSection = () => {
                     </div>
 
                     <div className="w-full md:w-3/5 flex flex-col space-y-3">
-                        {faqItems.map((item, index) => (
-                            <FAQItem key={index} text={item}/>
+                        {FAQs.map((item, index) => (
+                            <FAQItem key={index} title={item.title} description={item.description} />
                         ))}
                     </div>
                 </div>
@@ -42,14 +60,14 @@ const FAQSection = () => {
 };
 
 // Reusable FAQ Item component
-const FAQItem = (props: {text: string}) => {
+const FAQItem = (props: {title: string,description: string}) => {
     const [open, setOpen] = useState(false);
     return (
         <div
             className=" bg-white rounded-lg overflow-hidden shadow-sm hover:shadow transition-shadow duration-200">
             <div onClick={()=>setOpen(prev=>!prev)} className={'w-full flex items-center'}>
                 <div className="py-4 px-6 w-full text-right">
-                    <p className="text-gray-800 font-medium">{props.text}</p>
+                    <p className="text-gray-800 font-medium">{props.title}</p>
                 </div>
                 <div className="border-l border-gray-100 py-4 px-3 flex items-center justify-center">
                     <ChevronIcon className={`text-primary w-5 h-5 ${open && "-rotate-90"}`}/>
@@ -57,7 +75,7 @@ const FAQItem = (props: {text: string}) => {
             </div>
             {open && (
                 <div className={'px-6 pb-6 text-justify'}>
-                    {"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از".repeat(10)}
+                    {props.description}
                 </div>
             )}
         </div>
