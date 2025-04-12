@@ -3,31 +3,23 @@ import {ReactNode, useEffect, useRef, useState} from "react";
 function Sponsors() {
     const x = 130;
     const imagesUrl = Array.from({length: 5}).map((_,i) => `/images/sponsors/${i+1}.png`)
+    const images = imagesUrl.map((url,i) => (
+        <img
+            style={{
+                width: `${x}px`,
+                height: `${x}px`,
+                objectFit: "contain"
+            }}
+            src={url}
+            key={i}
+        />
+    ));
 
     return (
-        <div>
-            <Slider items={imagesUrl.map((url,i) => (
-                <img
-                    style={{
-                        width: `${x}px`,
-                        height: `${x}px`,
-                        objectFit: "contain"
-                    }}
-                    src={url}
-                    key={i}
-                />
-            ))} />
-            <Slider reverse items={imagesUrl.map((url,i) => (
-                <img
-                    style={{
-                        width: `${x}px`,
-                        height: `${x}px`,
-                        objectFit: "contain"
-                    }}
-                    src={url}
-                    key={i}
-                />
-            ))} />
+        <div className={'flex flex-col gap-5'}>
+            <Slider items={images} />
+            <Slider reverse items={images} />
+            <Slider items={images} />
         </div>
     )
 }
@@ -53,7 +45,7 @@ function Slider(props: {
         thread.current ||= setTimeout(()=>{
             thread.current = undefined;
             setX(prev => props.reverse ? prev-frame:prev+frame);
-        },250);
+        },1000);
 
         if (props.reverse ? X < X2:X > X2) {
             setFinal(prev => [
@@ -66,8 +58,7 @@ function Slider(props: {
 
     return (
         <div className={'w-full  overflow-hidden'}>
-            {X} ({final.length})
-            <div className={`flex ${!props.reverse ? "items-start":"items-end flex-row-reverse"} w-full gap-5 transition-all duration-[2s]`} style={{
+            <div className={`flex ${!props.reverse ? "items-start":"items-end flex-row-reverse"} w-full gap-5 transition-all duration-[2s] ease-linear`} style={{
                 transform: `translateX(${X}px)`
             }}>
                 {final}
