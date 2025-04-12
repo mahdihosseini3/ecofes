@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@import "./font.css";
 :root {
     --primary: #BC8660;
     direction: rtl;
@@ -8,6 +8,7 @@
 body {
     background: #fff;
     color: #000;
+    font-family: Vazirmatn;
 }
 
 .bg-primary {

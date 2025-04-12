@@ -1,6 +1,6 @@
 import {ReactNode, useEffect, useRef, useState} from "react";
 
-function Sponsors({size: x = 130}: {
+function Sponsors({size: x = 100}: {
     size?: number
 }) {
     const imagesUrl = Array.from({length: 5}).map((_,i) => `/images/sponsors/${i+1}.png`)
@@ -17,11 +17,12 @@ function Sponsors({size: x = 130}: {
     ));
 
     return (
-       <div>
-           <div>
-               <h3>حامیان جشنواره</h3>
+       <div className={'my-10'}>
+           <div className={'flex flex-col items-center justify-center gap-3'}>
+               <h3 className={'text-4xl font-bold py-4'}>حامیان جشنواره</h3>
                <p className={'text-center'}>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
            </div>
+           <br/>
            <div className={'flex flex-col gap-5'}>
                <Slider items={images} />
                <Slider reverse items={images} />
@@ -40,7 +41,7 @@ function Slider(props: {
         init: number
     }>
 }) {
-    const {init = 500, frame = 100, interval = 1000} = props.config  || {};
+    const {init = 500, frame = 100, interval = 2000} = props.config  || {};
     const [final, setFinal] = useState([
         ...props.items,
         ...props.items,
@@ -69,7 +70,7 @@ function Slider(props: {
 
     return (
         <div className={'w-full  overflow-hidden'}>
-            <div className={`flex ${!props.reverse ? "items-start":"items-end flex-row-reverse"} w-full gap-5 transition-all duration-[1.1s] ease-linear`} style={{
+            <div className={`flex ${!props.reverse ? "items-start":"items-end flex-row-reverse"} w-full gap-5 transition-all duration-[2s] ease-linear`} style={{
                 transform: `translateX(${X}px)`
             }}>
                 {final}
